@@ -21,12 +21,6 @@ PRODUCT_PACKAGES_ENG += \
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 30
 
-# Keystore2
-#PRODUCT_PACKAGES += \
-#    android.system.keystore2
-
-# API
-PRODUCT_SHIPPING_API_LEVEL := 30
 # health Hal
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \

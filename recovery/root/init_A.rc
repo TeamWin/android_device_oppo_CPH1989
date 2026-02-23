@@ -14,7 +14,7 @@ on init
     export PATH /sbin:/system/bin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
-    export EXTERNAL_STORAGE /sdcard
+    #export EXTERNAL_STORAGE /sdcard
 
     symlink /proc/self/fd/0 /dev/stdin
     symlink /proc/self/fd/1 /dev/stdout
@@ -41,8 +41,8 @@ on init
     mount cgroup none /acct cpuacct
     mkdir /acct/uid
 
-    mkdir /sdcard
-    mkdir /external_sd
+    #mkdir /sdcard
+    #mkdir /external_sd
     #Shuangquan.Du@PSW.AD.Recovery.0, 2018/07/21, Add for usb otg
     mkdir /usb_otg
     mkdir /system

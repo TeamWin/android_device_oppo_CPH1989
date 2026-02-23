@@ -114,11 +114,7 @@ BOARD_ROOT_EXTRA_FOLDERS := metadata my_product my_heytap my_company my_preload 
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_DENSITY := 480
-# Statusbar icons flags
 TW_STATUS_ICONS_ALIGN := center
-#TW_CUSTOM_CPU_POS := 50
-#TW_CUSTOM_CLOCK_POS := 300
-#TW_CUSTOM_BATTERY_POS := 800
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -126,12 +122,11 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # Crypto
-TW_INCLUDE_CRYPTO := false
-TW_INCLUDE_CRYPTO_FBE := false
-#TW_USE_FSCRYPT_POLICY := 1
-#BOARD_USES_METADATA_PARTITION := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := false
-#TW_PREPARE_DATA_MEDIA_EARLY := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_USE_FSCRYPT_POLICY := 1
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
 
 
 # TWRP Configuration
@@ -141,7 +136,6 @@ TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_DEFAULT_BRIGHTNESS := 531
 TW_MAX_BRIGHTNESS := 1023
-# TW_INCLUDE_LOGICAL := my_product my_heytap my_company my_preload my_stock my_carrier my_region my_engineering my_manifest
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_DEFAULT_EXTERNAL_STORAGE := true
@@ -153,8 +147,6 @@ TW_OZIP_DECRYPT_KEY := ACAC1E13A72431AE4A1B22BBA1C1C6A2
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_INTERNAL_STORAGE_PATH := "/data/media/0"  
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_USE_LEGACY_BATTERY_SERVICES := true
 RECOVERY_SDCARD_ON_DATA := true
 TWRP_INCLUDE_LOGCAT := true
@@ -168,17 +160,6 @@ TW_DEFAULT_LANGUAGE := en
 #essential for booting 12.1
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_RESETPROP := true
-
-# Additional binaries & libraries needed for recovery
-#TARGET_RECOVERY_DEVICE_MODULES += \
-#    libpuresoftkeymasterdevice \
-#    ashmemd_aidl_interface-cpp \
-#    libashmemd_client
-
-#TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-#    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-#    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
-#    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
 
 # PBRP specific build flags

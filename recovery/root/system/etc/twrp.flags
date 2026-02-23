@@ -4,7 +4,7 @@
 /system_image      emmc      /dev/block/by-name/system                                         flags=backup=1;flashimg=1
 /system_root       ext4      /dev/block/by-name/system                                         flags=display="System";wipeingui;backup=0
 /cache             ext4      /dev/block/platform/bootdevice/by-name/cache
-/data              ext4      /dev/block/platform/bootdevice/by-name/userdata                   flags=fileencryption=aes-256-xts:aes-256-cts:v1
+/data              ext4      /dev/block/by-name/userdata
 /vendor_image      emmc      /dev/block/by-name/vendor                                         flags=backup=1;flashimg=1
 /vendor            ext4      /dev/block/by-name/vendor                                         flags=backup=0;display="Vendor";wipeingui
 /persistent        emmc      /dev/block/platform/bootdevice/by-name/frp                        flags=display="Frp";backup=1
@@ -42,5 +42,5 @@
 
 
 # External-Devices (SDCARD | OTG)
-/external_sd       vfat      /dev/block/mmcblk0p1          /dev/block/mmcblk0                  flags=display="Micro SD card";storage;wipeingui;removable
+/external_sd       auto      /dev/block/mmcblk0p1          /dev/block/mmcblk0                  flags=display="Micro SD card";storage;wipeingui;removable
 /usb_otg           auto      /dev/block/sdd1               /dev/block/sdd                      flags=display="Usb-Otg";storage;wipeingui;removable
